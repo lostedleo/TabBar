@@ -1064,8 +1064,6 @@ function! <SID>Bf_DelWithD()
     if g:Tb_DBG_LVL > 0
         call <SID>DEBUG('EXIT : Bf_DelWithD() g:Tb_VimBufList =['. g:Tb_VimBufList.'] g:Tb_BufferMap=['.g:Tb_BufferMap.']',10)
     endif
-
-    call <SID>Win_Goto_Main()
 endfunction " %%
 
 " Bf_SafePrint - Wrapper for getting -TabBar- window shown ~~
@@ -1289,7 +1287,6 @@ endfunction " %%
 
 " Bf_SwitchTo      Switch to bufNum( parameter) buffer~~
 function! <SID>Bf_SwitchTo( bufNum)
-    call <SID>Win_Goto_Main()
     let l:vimbuf = <SID>Map_Get_key( a:bufNum )
     exec "b!" . l:vimbuf
 endfunction " %%
