@@ -80,14 +80,14 @@ if ! hasmapto('1') || !hasmapto('<M-1>')
             inoremap <unique> <script> <M-0> <esc>:call <SID>Bf_SwitchTo( 10)<CR>:<BS>a
       else
             "NORMAL mode bindings for vim( dos32 )
-            noremap <unique> <script> ± :call <SID>Bf_SwitchTo( 1)<CR>:<BS>
-            noremap <unique> <script> ² :call <SID>Bf_SwitchTo( 2)<CR>:<BS>
-            noremap <unique> <script> ³ :call <SID>Bf_SwitchTo( 3)<CR>:<BS>
-            noremap <unique> <script> ´ :call <SID>Bf_SwitchTo( 4)<CR>:<BS>
-            noremap <unique> <script> µ :call <SID>Bf_SwitchTo( 5)<CR>:<BS>
-            noremap <unique> <script> ¶ :call <SID>Bf_SwitchTo( 6)<CR>:<BS>
-            noremap <unique> <script> · :call <SID>Bf_SwitchTo( 7)<CR>:<BS>
-            noremap <unique> <script> ¸ :call <SID>Bf_SwitchTo( 8)<CR>:<BS>
+            noremap <unique> <script> Â± :call <SID>Bf_SwitchTo( 1)<CR>:<BS>
+            noremap <unique> <script> Â² :call <SID>Bf_SwitchTo( 2)<CR>:<BS>
+            noremap <unique> <script> Â³ :call <SID>Bf_SwitchTo( 3)<CR>:<BS>
+            noremap <unique> <script> Â´ :call <SID>Bf_SwitchTo( 4)<CR>:<BS>
+            noremap <unique> <script> Âµ :call <SID>Bf_SwitchTo( 5)<CR>:<BS>
+            noremap <unique> <script> Â¶ :call <SID>Bf_SwitchTo( 6)<CR>:<BS>
+            noremap <unique> <script> Â· :call <SID>Bf_SwitchTo( 7)<CR>:<BS>
+            noremap <unique> <script> Â¸ :call <SID>Bf_SwitchTo( 8)<CR>:<BS>
       "else
             "NORMAL mode bindings for vim( terminal)
             noremap <unique> <script> 1 :call <SID>Bf_SwitchTo( 1)<CR>:<BS>
@@ -1065,7 +1065,6 @@ function! <SID>Bf_DelWithD()
         call <SID>DEBUG('EXIT : Bf_DelWithD() g:Tb_VimBufList =['. g:Tb_VimBufList.'] g:Tb_BufferMap=['.g:Tb_BufferMap.']',10)
     endif
 
-    call <SID>Win_Goto_Main()
 endfunction " %%
 
 " Bf_SafePrint - Wrapper for getting -TabBar- window shown ~~
@@ -1289,7 +1288,6 @@ endfunction " %%
 
 " Bf_SwitchTo      Switch to bufNum( parameter) buffer~~
 function! <SID>Bf_SwitchTo( bufNum)
-    call <SID>Win_Goto_Main()
     let l:vimbuf = <SID>Map_Get_key( a:bufNum )
     exec "b!" . l:vimbuf
 endfunction " %%
